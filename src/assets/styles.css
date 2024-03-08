@@ -1,0 +1,204 @@
+/* Include a Google Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
+/* Global styles */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    background-color: #f4f7fa;
+    color: #333;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* Main Layout */
+
+.main-container {
+    display: flex;
+}
+
+
+/* Sidebar Styles */
+
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    height: 100vh;
+    /* or use 100% if it's within a flex container */
+}
+
+.menu-item {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.menu-item:hover,
+.menu-item.active {
+    background-color: #f0f0f0;
+}
+
+
+/* Main Content Styles */
+
+.main-content {
+    flex-grow: 1;
+    padding: 1rem;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/* Card Header */
+
+.card-header {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f7f7;
+    /* Light gray background to match the sidebar's contrast */
+    color: #333;
+    /* Dark gray text to ensure readability */
+}
+
+
+/* Styles for the entire app */
+
+#app {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* Sidebar styles */
+
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #fff;
+    /* White background for a clean look */
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+    /* Subtle shadow for depth */
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 4px;
+    /* Slightly rounded corners for modern look */
+    margin-bottom: 5px;
+    /* Add a little space between menu items */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+    /* Dark text for contrast */
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.menu-item:hover {
+    background-color: #f5f5f5;
+    /* Slightly darker background on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    /* Lift effect on hover */
+}
+
+.menu-item svg {
+    margin-right: 10px;
+    /* Space between icon and text */
+    font-size: 1.1em;
+    /* Slightly larger icons */
+    color: #646464;
+    /* A shade darker than the text for visual hierarchy */
+}
+
+
+/* Style the 'Olympos' menu item differently */
+
+.menu-item.olympos {
+    background-color: #eeeeee;
+    /* A distinct background for section title */
+    font-weight: 600;
+    /* Make it bold */
+    cursor: default;
+    /* No pointer to indicate non-clickable */
+}
+
+
+/* Submenu styles */
+
+.submenu {
+    display: none;
+    flex-direction: column;
+    padding: 0;
+}
+
+.submenu-item {
+    padding-left: 30px;
+    /* Indent submenu items for clear hierarchy */
+}
+
+
+/* Keep the submenu open when hovered */
+
+.menu-item:hover+.submenu,
+.submenu:hover {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Adjustments for a router-link */
+
+.router-link-exact-active {
+    background-color: #e9e9e9;
+    /* Highlight for the active route */
+    font-weight: 600;
+    /* Bold for the active route */
+}
+
+
+/* Additional icon for chat next to 'Maya' */
+
+.menu-item.maya svg.chat-icon {
+    margin-left: auto;
+    /* Push the chat icon to the right */
+}
+
+.router-link-active {
+    color: #42b983;
+    /* Vue green for example */
+}
+
+.chart-container {
+    position: relative;
+    height: 400px;
+    /* Adjust height as necessary */
+    margin-bottom: 20px;
+    /* Space between chart and next content */
+    width: 100%;
+}
+
+.app-status {
+    padding-top: 20px;
+    /* Space on top to prevent overlap */
+}
