@@ -18,8 +18,8 @@
       <span>Deployment Metrics</span>
     </router-link>
       <div class="menu-item"><FontAwesomeIcon :icon="['fas', 'chart-line']" /> Build Metrics</div>
-      <div class="menu-item"><FontAwesomeIcon :icon="['fas', 'tools']" /> Dynatrace Dev</div>
-      <div class="menu-item"><FontAwesomeIcon :icon="['fas', 'tools']" /> Dynatrace Prod</div>
+      <div class="menu-item"><FontAwesomeIcon :icon="['fas', 'tools']" /> Dev Release</div>
+      <div class="menu-item"><FontAwesomeIcon :icon="['fas', 'tools']" /> Key Release</div>
       <div class="menu-item">
         <FontAwesomeIcon :icon="['far', 'comment-dots']" class="icon" />
         <span class="menu-text">Maya</span>
@@ -80,7 +80,7 @@
   .sidebar {
     width: 250px;
     height: 100vh;
-    background-color: #022001;
+    background-color: white;
     box-sizing: border-box;
     padding: 20px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -91,8 +91,8 @@
     align-items: center;
     padding: 10px 20px;
     cursor: pointer;
-    font-family: 'Inter var', sans-serif;
-    color:#e0e0e0;
+    font-family: 'Nunito', sans-serif;
+    color:#000000;
   }
   
   .menu-item svg {
@@ -131,7 +131,7 @@
   
   .menu-item:hover,
   .submenu-item:hover {
-    background-color: #090101;
+    background-color: lightgray;
   }
   
   .menu-item.active {

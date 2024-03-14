@@ -1,6 +1,7 @@
 <template>
     <div class="metric-card">
-      <h3>{{ title }}</h3>
+      <h4>{{ title }}</h4>
+
       <p class="metric-value">{{ value }}</p>
       <p class="metric-change">{{ change }}</p>
     </div>
@@ -18,23 +19,27 @@
   
   <style scoped>
   .metric-card {
-    background-color: #d7e8e9;
+    background-color: #7fbd8d;
     padding: 3px;
     border-radius: 12px;
+    display:block;
     box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s ease;
+    font-size: 1rem;
+    border-radius: 12px; /* Round corners for the metric card */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   }
   
   .metric-value {
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    color: white;
     display: block;
     margin-bottom: 5px;
   }
   
   .metric-change {
-    color: #dee4e9;
+    color: #6c757d;
     font-weight: 100;
   }
   

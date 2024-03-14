@@ -56,5 +56,6 @@ export default {
 .bar-chart-container {
   width: 100%;
   max-height: 400px;
+  color: #decb94;
 }
 </style>

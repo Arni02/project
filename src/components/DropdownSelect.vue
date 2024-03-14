@@ -26,7 +26,7 @@
   .dropdown-select {
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #FF7F50;
+    border: 1px solid #7fbd8d;
     width: 100%;
   }
   </style>

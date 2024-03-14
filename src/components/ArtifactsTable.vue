@@ -56,11 +56,11 @@
   .artifacts-table th,
   .artifacts-table td {
     padding: 12px 16px;
-    border-bottom: 1px solid #DEB887;
+    border-bottom: 1px solid #7fbd8d;
   }
   
   .artifacts-table th {
-    background-color: #FA8072;
+    background-color: #7fbd8d;
     font-weight: bold;
   }
   
