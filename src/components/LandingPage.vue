@@ -1,10 +1,26 @@
 <template>
   <div class="header-area">
-    <h2>Overview</h2>
+    <h2>OLYMPOS</h2>
   </div>
   <div class="dashboard">
-    <section class="key-metrics"> 
-    <!-- Cards for Key Metrics -->
+
+    <div class="content-section">
+     
+      <div class="text-section">
+        <h2>More about our OLYMPOS</h2>
+        <p>Explain more about our application</p>
+        <button class="learn-more-btn" @click="showMetrics = !showMetrics">LEARN MORE</button>
+      </div>
+
+      <div class="image-section">
+       
+        <img src="../assets/images/Olympos.png" alt="Olympos" />
+      </div>
+    </div>
+
+
+  <!-- <section class="key-metrics"> 
+    
     <h3>Build Metrics</h3>
    
       
@@ -24,10 +40,10 @@
         <p class="metric-value">10</p>
         <p class="metric-note">1%- since last week</p>
       </div>
-    </section>
+    </section> -->
 
     <!-- Graphs for Deployment Data -->
-    <section class="deployment-graphs">
+    <section class="deployment-graphs" v-if="showMetrics">
    <h3>Deployment Metrics</h3>
    <div class="chart-container">
       <LineChart :chart-data="deploymentData"></LineChart>
@@ -35,10 +51,10 @@
     </section>
 
     <!-- Data Table for Application Status -->
-    <h3>App Status</h3>
-    <section class="app-status">
+    
+    <section class="app-status" v-if="showMetrics">
      
-      
+      <h3>App Status</h3>
       <table>
         <thead>
           <tr>
@@ -97,6 +113,7 @@ export default {
 },
   data() {
     return {
+      showMetrics: false, 
       deploymentData: {
         // Example structure for chart.js data
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September'],
@@ -390,6 +407,28 @@ margin: 10px;
   color: #191e02;
   /* ... */
 }
+.content-section {
+   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9rem;
+  width: 100%;
+}
+.text-section {
+  flex-basis: 50%; /* Adjust the width as necessary */
+  padding-right: 20px; /* Give some space between the text and the image */
+  width: 50%; 
+}
+.image-section {
 
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end; /* This will push your image to the right */
+}
+.image-section img {
+  max-width: 100%;
+  height: auto;
+ 
+}
 /* Additional styles for the graphs and tables */
 </style>
