@@ -1,20 +1,23 @@
 <template>
   <div class="header-area">
+    <div class="header-content">
     <h2>OLYMPOS</h2>
+    <img src="../assets/images/olym.png" alt="Olympos Logo" class="header-logo">
+  </div>
   </div>
   <div class="dashboard">
 
     <div class="content-section">
      
       <div class="text-section">
-        <h2>More about our OLYMPOS</h2>
-        <p>Explain more about our application</p>
+        <h2>More about OLYMPOS</h2>
+        <p>Empower your deployment strategy with OLYMPOS – a seamless platform designed to enhance visibility across your application statuses and streamline your deployment processes. Experience real-time insights, accelerate your delivery cycles, and ensure consistent application performance. Dive into a world where deployment efficiency meets clarity</p>
         <button class="learn-more-btn" @click="showMetrics = !showMetrics">LEARN MORE</button>
       </div>
 
       <div class="image-section">
        
-        <img src="../assets/images/Olympos.png" alt="Olympos" />
+        <img src="../assets/images/Olympos.png"  alt="Olympos" class='olympos'>
       </div>
     </div>
 
@@ -198,8 +201,11 @@ color: var(--color-gray-blue);/* Light text color */
 transition: background-color 0.3s ease; /* Smooth transition for any background-color change */
 width: calc(100% - 250px); 
 padding: 1rem;
-}
 
+}
+.olympos{
+  width:100%;
+}
 .chart-container {
 
 
@@ -411,24 +417,37 @@ margin: 10px;
    display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 9rem;
+  padding: 2rem;
   width: 100%;
+  font-family: 'Nunito', sans-serif
 }
 .text-section {
   flex-basis: 50%; /* Adjust the width as necessary */
   padding-right: 20px; /* Give some space between the text and the image */
-  width: 50%; 
+  width: 30%; 
+  font-family: 'Nunito', sans-serif;
 }
 .image-section {
-
+  
   flex-grow: 1;
   display: flex;
+  flex-basis: 70%;  
   justify-content: flex-end; /* This will push your image to the right */
 }
 .image-section img {
   max-width: 100%;
+  flex-basis: 70%; 
   height: auto;
  
+}
+.header-logo {
+  max-width: 50px; /* Adjust as needed for your design */
+  max-height: 50px; /* Adjust as needed for your design */
+  margin-left: 10px; /* Add some space between text and the logo */
+}
+.header-content {
+  display: flex;
+  align-items: center; /* This will vertically center the items in the header */
 }
 /* Additional styles for the graphs and tables */
 </style>
