@@ -5,103 +5,55 @@
     <img src="../assets/images/olym.png" alt="Olympos Logo" class="header-logo">
   </div>
   </div>
-  <div class="dashboard">
+  
+  <header class="main-header">
+    
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#build-metrics">Build Metrics</a></li>
+        <li><a href="deployment-metrics">Deploy Metrics</a></li>
+        <li><a href="#app-inventory">App Inventory</a></li>
+        <li><a href="#app-health">App Health</a></li>
+        <li><a href="#Release-info">Release info</a></li>
+        <li><a href="#Vulnerability-Dashboard"> Vulnerability Dashboard</a></li>
+        <li><a href="#Horizon-Outages">Horizon Outages</a></li>
+        <li><a href="#Patching-Schedule">Patching Schedule</a></li>
+        <li><a href="#Maya">Maya</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="content">
+    <div class="highlights">
+      <section id="Patching-Schedule" class="highlight-section">
+        <div class="highlight-content">
+          <h3>Patching Schedule</h3>
+          <p>Ensure your systems are robust and secure with our comprehensive patching schedule, designed to keep your infrastructure resilient against threats.</p>
+          <a href="#Patching-Schedule" class="learn-more">Learn more »</a>
+        </div>
+        <div class="highlight-image">
+          <img src="../assets/patching-schedule.jpg" alt="Patching Schedule">
+        </div>
+      </section>
 
-    <div class="content-section">
-     
-      <div class="text-section">
-        <h2>More about OLYMPOS</h2>
-        <p>Empower your deployment strategy with OLYMPOS – a seamless platform designed to enhance visibility across your application statuses and streamline your deployment processes. Experience real-time insights, accelerate your delivery cycles, and ensure consistent application performance. Dive into a world where deployment efficiency meets clarity</p>
-        <button class="learn-more-btn" @click="showMetrics = !showMetrics">LEARN MORE</button>
-      </div>
-
-      <div class="image-section">
-       
-        <img src="../assets/images/Olympos.png"  alt="Olympos" class='olympos'>
-      </div>
+      <section id="Horizon-Outages" class="highlight-section">
+        <div class="highlight-content">
+          <h3>Horizon Outages</h3>
+          <p>Get ahead of outages with our predictive alerts. Our platform provides actionable insights to reduce downtime and maintain seamless operations.</p>
+          <a href="#Horizon-Outages" class="learn-more">Learn more »</a>
+        </div>
+        <div class="highlight-image">
+          <img src="../assets/horizon-outages.jpg" alt="Horizon Outages">
+        </div>
+      </section>
     </div>
 
-
-  <!-- <section class="key-metrics"> 
-    
-    <h3>Build Metrics</h3>
-   
-      
-
-      <div class="card">
-        <h1>Builds</h1>
-        <p class="metric-value">152 Total</p>
-        <p class="metric-note">24 Active Builds</p>
-      </div>
-      <div class="card">
-        <h1>Success</h1>
-        <p class="metric-value">98.2%</p>
-        <p class="metric-note">%10+ since last week</p>
-      </div>
-      <div class="card">
-        <h1>Failed</h1>
-        <p class="metric-value">10</p>
-        <p class="metric-note">1%- since last week</p>
-      </div>
-    </section> -->
-
-    <!-- Graphs for Deployment Data -->
-    <section class="deployment-graphs" v-if="showMetrics">
+  </main>
+  <section class="deployment-graphs" v-if="showMetrics">
    <h3>Deployment Metrics</h3>
    <div class="chart-container">
       <LineChart :chart-data="deploymentData"></LineChart>
     </div>
-    </section>
-
-    <!-- Data Table for Application Status -->
-    
-    <section class="app-status" v-if="showMetrics">
-     
-      <h3>App Status</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Platform</th>
-            <th>Environment</th>
-            <th>Application</th>
-            <th>Status</th>
-           
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            
-            <td>Adfw</td>
-            <td>Dev1</td>
-            <td>ADFW</td>
-            <td>UP</td>
-          </tr>
-          <tr>
-            
-            <td>Dmz Desktop</td>
-            <td>Dev4</td>
-            <td>AAD</td>
-            <td>UP</td>
-          </tr>
-          <tr>
-            
-            <td>Dmz Desktop</td>
-            <td>Dev2</td>
-            <td>AAD</td>
-            <td>DOWN</td>
-          </tr>
-          <tr>
-            
-            <td>ADFW</td>
-            <td>Dev3</td>
-            <td>ADFW</td>
-            <td>UP</td>
-          </tr>
-          <!-- Repeat for other products -->
-        </tbody>
-      </table>
-    </section>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -111,12 +63,9 @@ export default {
   components: {
     LineChart,
   },
-  mounted() {
-  console.log(this.deploymentData); // Check if data is correct
-},
-  data() {
+data() {
     return {
-      showMetrics: false, 
+      showMetrics: true, 
       deploymentData: {
         // Example structure for chart.js data
         labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August','September'],
@@ -141,18 +90,60 @@ export default {
 console.log("Deployment data:", this.deploymentData);
 // It will print the deployment data to the console when the component mounts
 },
+methods: {
+    toggleMetrics() {
+      this.showMetrics = !this.showMetrics; // Toggle the visibility
+    },
+    // ...other methods if needed...
+  },
       // ...other data properties...
     };
   },
 };
 </script>
-
 <style scoped>
+.main-header {
+  background-color: light; /* Adjust the color to fit your brand */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Center the menu */
+}
+
+.main-nav li {
+  padding: 1rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-family: 'Nunito', sans-serif;
+  color: #fff; /* Change as needed */
+  font-weight: bold;
+  background-color: #76c098
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+  background-color: #decb94;
+}
+.header-link:hover {
+  color: #decb94; /* New hover color */
+}
+
+.section-container {
+  padding: 4rem 1rem;
+}
 
 .deployment-graphs {
 /* Adjust the max-height or remove it if not needed */
 max-height: none; /* This ensures there's no maximum height restriction */
 width: 100%;
+
 }
 .header-area {
   background-color: #424650; /* Header background color */
@@ -220,7 +211,7 @@ width: 100%;
 canvas {
 max-width: 100%;
 height: auto;
-padding: 1rem;
+padding: 10rem;
 color: #decb94;
 }
 .header {
@@ -413,7 +404,7 @@ margin: 10px;
   color: #191e02;
   /* ... */
 }
-.content-section {
+/* .content-section {
    display: flex;
   justify-content: space-between;
   align-items: center;
@@ -422,8 +413,8 @@ margin: 10px;
   font-family: 'Nunito', sans-serif
 }
 .text-section {
-  flex-basis: 50%; /* Adjust the width as necessary */
-  padding-right: 20px; /* Give some space between the text and the image */
+  flex-basis: 50%; /* Adjust the width as necessary 
+  padding-right: 20px; /* Give some space between the text and the image 
   width: 30%; 
   font-family: 'Nunito', sans-serif;
 }
@@ -432,14 +423,14 @@ margin: 10px;
   flex-grow: 1;
   display: flex;
   flex-basis: 70%;  
-  justify-content: flex-end; /* This will push your image to the right */
+  justify-content: flex-end; /* This will push your image to the right 
 }
 .image-section img {
   max-width: 100%;
   flex-basis: 70%; 
   height: auto;
  
-}
+} */
 .header-logo {
   max-width: 50px; /* Adjust as needed for your design */
   max-height: 50px; /* Adjust as needed for your design */
@@ -448,6 +439,51 @@ margin: 10px;
 .header-content {
   display: flex;
   align-items: center; /* This will vertically center the items in the header */
+  font-family: 'Nunito', sans-serif;
+}
+.highlights {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 2rem ;
+  font-family: 'Nunito', sans-serif;
+}
+
+.highlight-section {
+  flex: 1;
+  display: flex;
+  margin-right: 6rem; /* Adjust spacing between the two sections */
+  font-family: 'Nunito', sans-serif;
+}
+
+.highlight-content {
+  flex-basis: 50%;
+  padding-right: 3rem; /* Adjust spacing within the content */
+  font-family: 'Nunito', sans-serif;
+
+}
+
+.highlight-image {
+  flex-basis: 50%;
+}
+
+.highlight-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px; /* Optional: for rounded corners */
+}
+
+.learn-more {
+  text-decoration: none;
+  color: white; /* Olympos brand color */
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  background-color: #76c098;
+}
+
+.learn-more:hover {
+  text-decoration: underline;
+  background-color: #76c098;
 }
 /* Additional styles for the graphs and tables */
 </style>

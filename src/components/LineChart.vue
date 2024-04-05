@@ -78,5 +78,6 @@ canvas {
   width: 100% !important;
   height: 100% !important;
   color: #decb94;
+  padding: 2rem;
 }
 </style>
